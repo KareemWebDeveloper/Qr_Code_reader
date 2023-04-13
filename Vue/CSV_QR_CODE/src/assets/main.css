@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("../images/macos-monterey-stock-black-dark-mode-layers-5k-3840x2160-5889.jpg");
+    background-size: cover;
+}
+/* @media screen and (max-width: 1000px){
+    body{
+        background-image: url("../images/macos-monterey-stock-black-dark-mode-layers-5k-3840x2160-5889.jpg");
+        background-size: cover;
+    }
+} */
