@@ -1,7 +1,7 @@
 <template>
     <div class="Buttons">
-        <RouterLink to="/reader" class="LinkButton">Read QR Code</RouterLink>        
-        <RouterLink to="" class="LinkButton">View Saved Data</RouterLink>        
+        <RouterLink to="/reader" class="LinkButton" @click="ReadactiveRouter" id="read">Read QR Code</RouterLink>        
+        <RouterLink to="/viewData" class="LinkButton" @click="ViewactiveRouter" id="view">View Saved Data</RouterLink>        
     </div>
     <hr style="background-color: white; color: white;">
 </template>
@@ -32,9 +32,41 @@
         font-size: 20px;
         background-color: rgba(255, 255, 255, 0.77);
     }
+    .active{
+        background-color: rgba(255, 255, 255, 0.668) !important;
+    }
+    @media screen and (max-width : 700px){
+        .LinkButton{
+            width: 100%;
+            margin: 2vh;
+            text-align: center;
+        }
+        .Buttons{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+
+        }
+        
+    }
 </style>
 <script>
 export default {
   name: 'RouterToggle',
+  methods: {
+    ReadactiveRouter(){
+        let view = document.getElementById('view')
+        let read = document.getElementById('read')
+        view.classList.remove('active')
+        read.classList.add('active')
+    },
+    ViewactiveRouter(){
+        let view = document.getElementById('view')
+        let read = document.getElementById('read')
+        view.classList.add('active')
+        read.classList.remove('active')
+    }
+
+  },
 }
 </script>

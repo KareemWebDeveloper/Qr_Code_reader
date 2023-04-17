@@ -5,22 +5,19 @@ import animation from '../components/animation.vue';
                            <!-- *****Home Page***** -->
 
   <div class="Home">   <!--  container div -->
-    <!-- backGround Image -->
-    <img src="../images/macos-monterey-stock-black-dark-mode-layers-5k-3840x2160-5889.jpg" class="LargeScreens" alt="">
-    <img src="../images/responsiveBG.png" class="smallScreens" alt="">
     <div class="intro">
       <div class="text">
         <h1>WANNA EXTRACT CSV DATA FROM YOUR QR CODE?</h1>
-        <p>Use our QR READER features to extract your csv data and save it after registering so you can access them at any time .. Join Us Now and enjoy our services</p>
-        <div class="Register"><RouterLink to="" class="LoginButton" style="margin: auto;">Register Now</RouterLink></div>
+        <p>Use our QR READER features to extract Student grades csv data from qr codes and save it after registering so you can access them at any time .. Join Us Now and enjoy our services</p>
+        <div class="Register"><RouterLink to="/register" class="LoginButton" style="margin: auto;">Register Now</RouterLink></div>
       </div>
       <div class="csvImg">
         <img src="../images/csv.png" alt="">
         <!-- using animation component -->
-        <RouterLink to=""><animation></animation></RouterLink>
+        <RouterLink to="/reader"><animation></animation></RouterLink>
       </div>
     </div>
-    <div class="Try"><RouterLink to="" class="TryButton" style="margin: auto;">Try it For Free</RouterLink></div>
+    <div class="Try"><RouterLink to="/reader" class="TryButton" style="margin: auto;">Try it For Free</RouterLink></div>
   </div>
 
                            <!-- *****Home Page End***** -->
@@ -30,34 +27,27 @@ import animation from '../components/animation.vue';
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 .Home{
-  position: relative;
+  background: url(../images/macos-monterey-stock-black-dark-mode-layers-5k-3840x2160-5889.jpg) fixed;
+  padding: 12vh 5vh;
 }
 .animation{
-  position: absolute;
-  top: 20%;
-  left: 50%;
+
 }
 .Home .intro{
   font-family: 'PT Sans', sans-serif;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  z-index: 7;
   color: white;
   text-shadow: 0px 0px 5px black;
-  transform: translate(-50%, -50%);
-  width: 80%;
+  width: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin: 5vh auto;
 }
 .Try{
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 7;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 8vh;
 }
 img{
 width: 100%;
@@ -98,7 +88,6 @@ width: 100%;
 .TryButton:hover{
   background-color: rgba(255, 255, 255, 0.801);
   color: blue;
-  box-shadow: 0px -1px 7px black;
 }
 
 .csvImg{
@@ -113,13 +102,36 @@ width: 100%;
   margin-left: 4vh;
 }
 
-@media screen and (max-width: 850px){
-.LargeScreens{
-  display: none !important;
-}
-.Home .intro{
-  position: absolute;
-  top: 35%;
+@media screen and (max-width: 1000px){
+
+  .intro{
+    margin: 10vh 0;
+  }
+  .Home .intro{
+    display: flex;
+    text-align: center;
+  }
+  .text p{
+    text-align: center;
+    width: 100% !important;
+    margin: auto;
+  }
+  .Register{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4vh;
+  }
+  .Try{
+  }
+  }
+@media screen and (max-width: 920px){
+  .Home{
+    padding: 12vh 5vh 5vh;
+  }
+  .LargeScreens{
+    display: none !important;
+  }
+  .Home .intro{
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -135,44 +147,30 @@ width: 100%;
   margin-bottom: 4vh;
 }
 .Try{
-  position: absolute;
-  top: 70%;
-  left: 50%;
+
 }
 }
 @media screen and (max-width: 650px){
-.LargeScreens{
-  display: none !important;
+  .LargeScreens{
+    display: none !important;
+  }
+  .Home .intro{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .text p{
+    text-align: center;
+    width: 100% !important;
+    margin: auto;
+  }
+  .Register{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4vh;
+  }
+  .Try{
+  }
 }
-.Home .intro{
-  position: absolute;
-  top: 52%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.text p{
-  text-align: center;
-  width: 100% !important;
-  margin: auto;
-}
-.Register{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 4vh;
-}
-.Try{
-  position: absolute;
-  top: 95%;
-  left: 50%;
-}
-}
-@media screen and (min-width: 851px){
-.LargeScreens{
-  display: flex !important;
-}
-.smallScreens{
-  display: none !important;
-}
-}
+
 </style>

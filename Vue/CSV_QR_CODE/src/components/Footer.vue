@@ -13,9 +13,9 @@
             </div>
             <div class="Links">
                 <h1>Quick Links</h1>
-                <h5>Home</h5>
-                <h5>Read Qr Code</h5>
-                <h5>View Saved Csv Data</h5>
+               <RouterLink to="/" style="text-decoration: none;"><h5>Home</h5></RouterLink>
+               <RouterLink to="/reader" style="text-decoration: none;"><h5>Read Qr Code</h5></RouterLink>
+               <RouterLink to="/viewData" style="text-decoration: none;"><h5>View Saved Csv Data</h5></RouterLink>
             </div>
             <div class="Links">
                 <h1>Follow us</h1>
@@ -99,10 +99,15 @@ footer{
     margin: 0;
     padding: 1.5vh;
 }
-@media screen and (max-width: 800px){
+@media screen and (max-width: 890px){
     .UpperSection{
         display: flex;
         flex-direction: column;
     }
+}
+@media screen and (max-width: 1190px){
+.Links h1{
+    font-size: 25px;
+}
 }
 </style>

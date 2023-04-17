@@ -6,11 +6,17 @@ import Footer from './components/Footer.vue'
 
 <template>
   <header>
-    <NavBar />
+    <NavBar v-if="showNavbar"></NavBar>
   </header>
   <RouterView />
   <Footer />
 </template>
-
-<style scoped>
-</style>
+<script>
+export default {
+  computed: {
+    showNavbar(){
+      return !['/login','/register'].includes(this.$route.path);
+    }
+  }
+}
+</script>

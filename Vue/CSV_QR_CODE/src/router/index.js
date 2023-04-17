@@ -12,12 +12,39 @@ const router = createRouter({
     {
       path: '/reader',
       name: 'QrReader',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/QrReaderView.vue')
-    }
+      component: () => import('../views/QrReaderView.vue'),
+      meta: {requiresAuth: true}
+    },
+    {
+      path: '/viewData',
+      name: 'viewData',
+      component: () => import('../views/ViewData.vue'),
+      meta: {requiresAuth: true}
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/registerView.vue')
+    },
   ]
 })
+router.beforeEach((to,from,next)=>{
+  if(to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated()){
+    // if the route requires authentication and the user is not authenticated , redirect to the login page
+    next('/login')
+  }
+  else{
+    //otherwise allow the user to access the requested route
+    next()
+  }
+})
+function isAuthenticated(){
+  return localStorage.getItem('userToken')!== null
+}
 
 export default router
