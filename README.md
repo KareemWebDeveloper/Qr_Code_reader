@@ -6,7 +6,10 @@
 
 ### please follow these steps to set up and run the application
 **Open Larvel folder -> Qr_Code_reader -> and then in the terminal enter : "composer update"**
+
 **then in the terminal enter : php artisan serve** 
+
+
 **then in the terminal enter : php artisan migrate** 
 
 
@@ -14,10 +17,17 @@
 
 **then download these packages that are used in the application** 
 **npm i bootstrap** 
+
+
 **npm i font-awesome** 
+
+
 **npm install jsqr** 
+
 **npm install axios** 
+
 **npm install papaparse** 
+
 **npm install crypto-js** 
 
 
